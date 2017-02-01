@@ -11,9 +11,7 @@ namespace CalculatorApp
     {
         public App()
         {
-            InitializeComponent();
-
-            MainPage = new CalculatorApp.MainPage();
+           MainPage = new CalculatorApp.MainPage();
         }
 
         protected override void OnStart()
