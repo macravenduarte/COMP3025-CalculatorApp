@@ -7,6 +7,7 @@
 <!-- This grid comes from Xamarins gitgub examples: "https://github.com/xamarin/xamarin-forms-samples/blob/master/UserInterface/Layout/LayoutSamples/CalculatorGridXAML.xaml"
  with some minor changes in the appearance -->
   <ContentPage.Resources>
+    <!-- Button styling -->
     <ResourceDictionary>
       <Style x:Key="plainButton" TargetType="Button">
         <Setter Property="BackgroundColor" Value="#eee" />
@@ -28,6 +29,7 @@
       </Style>
     </ResourceDictionary>
   </ContentPage.Resources>
+  <!--Grid definition -->
   <ContentPage.Content>
     <Grid x:Name="controlGrid" RowSpacing="1" ColumnSpacing="1">
       <Grid.RowDefinitions>
@@ -46,7 +48,7 @@
       </Grid.ColumnDefinitions>
 
       <!--Xamarin uses x:Name to access code behind files by assigning a name to the form tag -->
-      <Label x:Name="numberDisplay" Text="0" Grid.Row="0" HorizontalTextAlignment="End" VerticalTextAlignment="End" TextColor="White" FontSize="60" Grid.ColumnSpan="4" />
+      <Label x:Name="numberDisplay" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="End" VerticalTextAlignment="End" TextColor="White" FontSize="60" Grid.ColumnSpan="4" />
 
       <Button x:Name="clearButton" Text="C" Grid.Row="1" Grid.Column="1" Style="{StaticResource darkerButton}" />
       <Button x:Name="togglePosNegButton" Text="+/-" Grid.Row="1" Grid.Column="2" Style="{StaticResource darkerButton}" />

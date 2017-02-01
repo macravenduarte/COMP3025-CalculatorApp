@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*
+ * Application: CalculatorApp
+ * Description: A mobile calculator app for iOS and Android using Xamarin.
+ * File Name: MainPage.xaml.cs
+ * Author: Marco Duarte 100006379
+ * Last Updated: 31/01/2017
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +17,7 @@ namespace CalculatorApp
 {
     public partial class MainPage : ContentPage
     {
-        const string OPERATOR_ADD = "+",
+        const string    OPERATOR_ADD = "+",
                         OPERATOR_SUBTRACT = "-",
                         OPERATOR_MULTIPLY = "X",
                         OPERATOR_DIVIDE = "/",
@@ -19,6 +27,7 @@ namespace CalculatorApp
         List<Button>    operatorButtons,
                         operandButtons,
                         otherButtons;
+
         string[] operatorString = {
                                     OPERATOR_ADD,
                                     OPERATOR_SUBTRACT,
@@ -163,6 +172,7 @@ namespace CalculatorApp
                     }
                 }
 
+                //update the display if successful
                 if (calculationString.Count > 0)
                 {
                     UpdateDisplayValue(calculationString[calculationString.Count - 1]);
@@ -209,7 +219,7 @@ namespace CalculatorApp
                     //if there are items in the calculation chain list
                     if (calculationString.Count > 0)
                     {
-                        //update the display to show the latest value
+                        //update the display if successful
                         UpdateDisplayValue(calculationString[calculationString.Count - 1]);
                     }
                 }
@@ -293,8 +303,8 @@ namespace CalculatorApp
                     currentIndex++;
                 }
 
-                UpdateDisplayValue(previousResult.ToString());
-                calculationString.Clear();
+                UpdateDisplayValue(previousResult.ToString());  //update the display
+                calculationString.Clear(); 
                 calculationString.Add(previousResult.ToString());
             }
             catch (Exception e)
@@ -304,7 +314,7 @@ namespace CalculatorApp
         }
 
         /// <summary>
-        /// 
+        /// This method is used to update the display
         /// </summary>
         /// <param name="newValue"></param>
         void UpdateDisplayValue(string newValue)
